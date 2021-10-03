@@ -4,14 +4,11 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import MapView from 'react-native-maps';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
-    </View>
+    <MapView style={{flex: 1}} region={{ latitude:  48.856614, longitude: 2.3522219, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }} showsUserLocation={true}      />
   );
 }
 
